@@ -1,5 +1,11 @@
 # ood-aws-batch-adapter
 
+[![CI](https://github.com/scttfrdmn/ood-aws-batch-adapter/actions/workflows/ci.yml/badge.svg)](https://github.com/scttfrdmn/ood-aws-batch-adapter/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/scttfrdmn/ood-aws-batch-adapter)](https://goreportcard.com/report/github.com/scttfrdmn/ood-aws-batch-adapter)
+[![codecov](https://codecov.io/gh/scttfrdmn/ood-aws-batch-adapter/branch/main/graph/badge.svg)](https://codecov.io/gh/scttfrdmn/ood-aws-batch-adapter)
+[![Go Reference](https://pkg.go.dev/badge/github.com/scttfrdmn/ood-aws-batch-adapter.svg)](https://pkg.go.dev/github.com/scttfrdmn/ood-aws-batch-adapter)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 OOD compute adapter for AWS Batch. Translates Open OnDemand job submissions to AWS Batch API calls.
 
 ## Commands
