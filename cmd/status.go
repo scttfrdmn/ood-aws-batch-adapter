@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/aws/aws-sdk-go-v2/service/batch/types"
 	"github.com/scttfrdmn/ood-aws-batch-adapter/internal/batch"
 	"github.com/scttfrdmn/ood-aws-batch-adapter/internal/ood"
-	"github.com/aws/aws-sdk-go-v2/service/batch/types"
 	"github.com/spf13/cobra"
 )
 
