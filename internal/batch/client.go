@@ -17,9 +17,14 @@ type Client struct {
 	region string
 }
 
-// New creates a Batch client using the default AWS credential chain.
-func New(ctx context.Context, region string) (*Client, error) {
-	cfg, err := config.LoadDefaultConfig(ctx, config.WithRegion(region))
+// New creates a Batch client. optFns carry the region and, when configured, a per-user
+// AssumeRole credentials provider (#78) — pass awscfg.LoadOptions(...) from the command layer.
+// With no optFns it falls back to the default chain + region (single-account behavior).
+func New(ctx context.Context, region string, optFns ...func(*config.LoadOptions) error) (*Client, error) {
+	if len(optFns) == 0 {
+		optFns = []func(*config.LoadOptions) error{config.WithRegion(region)}
+	}
+	cfg, err := config.LoadDefaultConfig(ctx, optFns...)
 	if err != nil {
 		return nil, fmt.Errorf("load AWS config: %w", err)
 	}
