@@ -40,7 +40,7 @@ var submitCmd = &cobra.Command{
 		}
 
 		ctx := context.Background()
-		client, err := batch.New(ctx, region)
+		client, err := batch.New(ctx, region, awsOptions(ctx)...)
 		if err != nil {
 			return err
 		}
